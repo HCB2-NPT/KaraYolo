@@ -23,6 +23,10 @@
     box-shadow: none;
 }
 
+.list .item-block:last-child {
+    border-bottom: none;
+}
+
 .custom-ion-tab {
     background-size: 30px;
     background-repeat: no-repeat;

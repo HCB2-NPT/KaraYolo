@@ -10,11 +10,27 @@
 </ion-header>
 
 <ion-content>
-    <div *ngIf="items.length; then hasResults else notFound; let items"></div>
+    <div *ngIf="results.length; then hasResults else notFound; let results"></div>
     <ng-template #hasResults>
-        <ion-list>
-            <ion-item *ngFor="let item of items">
-                {{ item }}
+        <ion-list *ngFor="let group of results">
+            <ion-list-header>
+                <div class="title">{{ group.name }}</div>
+                <div [class.hide]="'TOP SONGS' === group.name"
+                    item-right class="more"
+                    (click)="more(group.name)">More</div>
+            </ion-list-header>
+            <ion-item *ngFor="let song of group.songs">
+                <ion-thumbnail item-left>
+                    <ion-img [src]="song.image"></ion-img>
+                </ion-thumbnail>
+                <h2>{{ song.name }}</h2>
+                <p>{{ song.artist }}</p>
+                <button ion-button icon-only item-right>
+                    <ion-icon name="song-play"></ion-icon>
+                </button>
+                <button ion-button icon-only item-right>
+                    <ion-icon name="song-info"></ion-icon>
+                </button>
             </ion-item>
         </ion-list>
     </ng-template>

@@ -17,4 +17,37 @@ page-search {
             }
         }
     }
+
+    .list {
+        .item {
+            padding-left: 10px;
+
+            .title {
+                font-size: 1.5rem;
+            }
+
+            .more {
+                color: #347eff;
+                font-size: 1.1rem;
+                text-transform: capitalize;
+            }
+
+            .label {
+                margin: 4px 8px 4px 0;
+
+                h2 {
+                    font-size: 1.5rem;
+                }
+
+                p {
+                    margin-top: 4px;
+                    font-size: 1.3rem;
+                }
+            }
+
+            .button {
+                background-color: transparent;
+            }
+        }
+    }
 }

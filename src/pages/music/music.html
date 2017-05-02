@@ -1,5 +1,10 @@
 <ion-header>
     <ion-toolbar>
+        <ion-buttons start>
+            <button ion-button (click)="findByGenres($event)">
+                Genres
+            </button>
+        </ion-buttons>
         <ion-segment [(ngModel)]="category">
             <ion-segment-button value="new">
                 New
@@ -34,11 +39,18 @@
             </ion-item>
         </ion-list>
         <ion-list *ngSwitchCase="'hot'">
-            <ion-item>
+            <ion-item *ngFor="let song of hotSongs">
                 <ion-thumbnail item-left>
-                    <img src="img/thumbnail-kitten-1.jpg">
+                    <img [src]="song.image">
                 </ion-thumbnail>
-                <h2>Luna</h2>
+                <h2>{{ song.name }}</h2>
+                <p>{{ song.artist }}</p>
+                <button ion-button icon-only item-right>
+                    <ion-icon name="song-play"></ion-icon>
+                </button>
+                <button ion-button icon-only item-right>
+                    <ion-icon name="song-info"></ion-icon>
+                </button>
             </ion-item>
         </ion-list>
     </div>

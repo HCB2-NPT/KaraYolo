@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar>
+        &nbsp;
+        <ion-buttons end>
+            8 results
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let song of songs">
+            <ion-thumbnail item-left>
+                <ion-img [src]="song.image"></ion-img>
+            </ion-thumbnail>
+            <h2>{{ song.name }}</h2>
+            <p>{{ song.artist }}</p>
+            <button ion-button icon-only item-right>
+                <ion-icon name="song-play"></ion-icon>
+            </button>
+            <button ion-button icon-only item-right>
+                <ion-icon name="song-info"></ion-icon>
+            </button>
+        </ion-item>
+    </ion-list>
+</ion-content>
