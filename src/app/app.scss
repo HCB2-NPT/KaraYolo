@@ -1,0 +1,87 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.list ion-thumbnail img {
+    border-radius: 10px;
+}
+
+.item-button {
+    box-shadow: none;
+}
+
+.custom-ion-tab {
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: 4px;
+}
+
+.custom-ion-toolbar {
+    height: 24px;
+    width: 24px;
+    background-size: 24px;
+    background-repeat: no-repeat;
+}
+
+.ion-ios-tab-music,
+.ion-md-tab-music,
+.ion-ios-tab-music-outline,
+.ion-md-tab-music-outline {
+    @extend .custom-ion-tab;
+    background-image:: url('../assets/img/Music.svg');
+}
+
+.ion-ios-tab-favorite,
+.ion-md-tab-favorite,
+.ion-ios-tab-favorite-outline,
+.ion-md-tab-favorite-outline {
+    @extend .custom-ion-tab;
+    background-image:: url('../assets/img/Favorite.svg');
+}
+
+.ion-ios-tab-dashboard,
+.ion-md-tab-dashboard,
+.ion-ios-tab-dashboard-outline,
+.ion-md-tab-dashboard-outline {
+    @extend .custom-ion-tab;
+    background-image:: url('../assets/img/Dashboard.svg');
+}
+
+.ion-ios-tab-more,
+.ion-md-tab-more,
+.ion-ios-tab-more-outline,
+.ion-md-tab-more-outline {
+    @extend .custom-ion-tab;
+    background-image:: url('../assets/img/More.svg');
+}
+
+.ion-ios-toolbar-search,
+.ion-md-toolbar-search {
+    @extend .custom-ion-toolbar;
+    background-image:: url('../assets/img/Search.svg');
+}
+
+.ion-ios-song-play,
+.ion-md-song-play {
+    @extend .custom-ion-toolbar;
+    background-image:: url('../assets/img/Play.svg');
+}
+
+.ion-ios-song-info,
+.ion-md-song-info {
+    @extend .custom-ion-toolbar;
+    background-image:: url('../assets/img/Info.svg');
+}

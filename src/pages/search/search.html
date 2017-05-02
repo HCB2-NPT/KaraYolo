@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-searchbar (input)="getItems($event)"></ion-searchbar>
+        <ion-buttons end>
+            <button ion-button (click)="back()">
+                Cancel
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div *ngIf="items.length; then hasResults else notFound; let items"></div>
+    <ng-template #hasResults>
+        <ion-list>
+            <ion-item *ngFor="let item of items">
+                {{ item }}
+            </ion-item>
+        </ion-list>
+    </ng-template>
+    <ng-template #notFound>
+        <div class="no-results">
+            <ion-icon name="musical-notes"></ion-icon>
+            <p>
+                We didn't find anything for <strong>"&lt;keyword&gt;"</strong>. Try something else.
+            </p>
+        </div>
+    </ng-template>
+</ion-content>

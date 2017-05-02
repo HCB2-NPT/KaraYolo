@@ -1,0 +1,20 @@
+page-search {
+    .no-results {
+        padding-top: 120px;
+        text-align: center;
+
+        .icon {
+            font-size: 10rem;
+            color: #757575;
+        }
+
+        p {
+            color: #333;
+            font-size: 1.4rem;
+
+            strong {
+                color: #347eff;
+            }
+        }
+    }
+}
