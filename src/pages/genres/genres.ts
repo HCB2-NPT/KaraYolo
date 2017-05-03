@@ -10,31 +10,38 @@ export class GenresPage {
     genres = [
         {
             name: 'All',
-            image: 'assets/img/KaraYolo.png'
+            image: 'assets/img/KaraYolo.png',
+            selected: true
         },
         {
             name: 'Bolero',
-            image: 'assets/img/bolero.jpg'
+            image: 'assets/img/bolero.jpg',
+            selected: false
         },
         {
             name: 'Cai Luong (Reformed Theatre)',
-            image: 'assets/img/cai-luong.jpg'
+            image: 'assets/img/cai-luong.jpg',
+            selected: false
         },
         {
             name: 'Pop & Ballads',
-            image: 'assets/img/pop-ballads.jpg'
+            image: 'assets/img/pop-ballads.jpg',
+            selected: false
         },
         {
             name: 'Rap',
-            image: 'assets/img/rap.jpg'
+            image: 'assets/img/rap.jpg',
+            selected: false
         },
         {
             name: 'Trinh Cong Son',
-            image: 'assets/img/trinh-cong-son.jpg'
+            image: 'assets/img/trinh-cong-son.jpg',
+            selected: false
         },
         {
             name: 'US-UK',
-            image: 'assets/img/us-uk.jpg'
+            image: 'assets/img/us-uk.jpg',
+            selected: false
         }
     ];
 

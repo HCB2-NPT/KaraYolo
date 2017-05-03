@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ToastController } from 'ionic-angular';
 
 @Component({
     selector: 'page-search-details',
@@ -50,7 +50,17 @@ export class SearchDetailsPage {
         }
     ]
 
-    constructor(public navController: NavController) {
+    constructor(public navController: NavController, public toastController: ToastController) {
         this.navController = navController;
+        this.toastController = toastController;
+    }
+
+    presentToast() {
+        let toast = this.toastController.create({
+            message: 'Song was added successfully',
+            duration: 3000,
+            position: 'bottom'
+        });
+        toast.present();
     }
 }

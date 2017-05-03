@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ToastController } from 'ionic-angular';
 import { SearchPage } from '../search/search';
 import { GenresPage } from '../genres/genres';
 
@@ -96,8 +96,9 @@ export class MusicPage {
         }
     ]
 
-    constructor(public navController: NavController) {
+    constructor(public navController: NavController, public toastController: ToastController) {
         this.navController = navController;
+        this.toastController = toastController;
     }
 
     searchSongs(e) {
@@ -106,5 +107,14 @@ export class MusicPage {
 
     findByGenres(e) {
         this.navController.push(GenresPage);
+    }
+
+    presentToast() {
+        let toast = this.toastController.create({
+            message: 'Song was added successfully',
+            duration: 3000,
+            position: 'bottom'
+        });
+        toast.present();
     }
 }
