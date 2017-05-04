@@ -9,6 +9,7 @@ import { DashboardPage } from '../pages/dashboard/dashboard';
 import { MorePage } from '../pages/more/more';
 import { GenresPage } from '../pages/genres/genres';
 import { SearchPage } from '../pages/search/search';
+import { DetailPage } from '../pages/detail/detail';
 import { SearchDetailsPage } from '../pages/search-details/search-details';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -25,6 +26,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     GenresPage,
     SearchPage,
     SearchDetailsPage,
+    DetailPage,
     TabsPage
   ],
   imports: [
@@ -43,6 +45,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     GenresPage,
     SearchPage,
     SearchDetailsPage,
+    DetailPage,
     TabsPage,
   ],
   providers: [

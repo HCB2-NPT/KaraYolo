@@ -24,15 +24,15 @@
 <ion-content>
     <div [ngSwitch]="category">
         <ion-list *ngSwitchCase="'new'">
-            <ion-item *ngFor="let song of newSongs">
+            <ion-item *ngFor="let song of newSongs" (click)="presentToast($event)">
                 <ion-thumbnail item-left>
                     <img [src]="song.image">
                 </ion-thumbnail>
                 <h2>{{ song.name }}</h2>
                 <p>{{ song.artist }}</p>
-                <button ion-button icon-only item-right (click)="presentToast()">
+  <!--               <button ion-button icon-only item-right >
                     <ion-icon name="song-play"></ion-icon>
-                </button>
+                </button> -->
                 <button ion-button icon-only item-right>
                     <ion-icon name="song-info"></ion-icon>
                 </button>
