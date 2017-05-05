@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ToastController } from 'ionic-angular';
 
 @Component({
     selector: 'page-detail',
@@ -14,8 +14,17 @@ export class DetailPage {
         image: "https://a1-images.myspacecdn.com/images03/29/225cb08d20c5488dae981b020b95dbd8/300x300.jpg",
     }
 
-    constructor(public navCtrl: NavController) {
-        // TODO
+    constructor(public navController: NavController, public toastController: ToastController) {
+        this.navController = navController;
+        this.toastController = toastController;
     }
 
+    presentToast(e) {
+        let toast = this.toastController.create({
+            message: 'Song was added successfully',
+            duration: 3000,
+            position: 'bottom'
+        });
+        toast.present();
+    }
 }

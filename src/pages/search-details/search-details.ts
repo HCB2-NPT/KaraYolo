@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
+import { DetailPage } from '../detail/detail';
 
 @Component({
     selector: 'page-search-details',
@@ -55,12 +56,23 @@ export class SearchDetailsPage {
         this.toastController = toastController;
     }
 
-    presentToast() {
-        let toast = this.toastController.create({
-            message: 'Song was added successfully',
-            duration: 3000,
-            position: 'bottom'
-        });
-        toast.present();
+    showDetail() {
+        this.navController.push(DetailPage);
+    }
+
+    presentToast(e) {
+        e.preventDefault();
+
+        let target = e.target;
+        if (target.tagName === 'BUTTON') {
+            this.showDetail();
+        } else {
+            let toast = this.toastController.create({
+                message: 'Song was added successfully',
+                duration: 3000,
+                position: 'bottom'
+            });
+            toast.present();
+        }
     }
 }

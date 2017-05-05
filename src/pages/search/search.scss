@@ -37,11 +37,16 @@ page-search {
 
                 h2 {
                     font-size: 1.5rem;
+                    color: #488aff;
                 }
 
                 p {
                     margin-top: 4px;
                     font-size: 1.3rem;
+
+                    &.lyrics {
+                        color: #333;
+                    }
                 }
             }
 

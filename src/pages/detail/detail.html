@@ -7,16 +7,52 @@
 </ion-header>
 
 <ion-content>
-<<<<<<< HEAD
     <div class="row song">
-        <div class="col-sm-4">
+        <div class="col-xs-4">
             <img [src]="song.image" class="image">
         </div>
-        <div class="col-sm-8">
+        <div class="col-xs-8">
             <h2 class="name">{{ song.name }}</h2>
-            <p>{{ song.artist }}</p>
+            <p class="artist">{{ song.artist }}</p>
+            <div class="genre">
+                Pop &amp; Ballads
+            </div>
         </div>
     </div>
-=======
->>>>>>> 0dfce4214a7f20bfca8dd3dbae2a2b259c2df0fe
+
+    <div class="navigator">
+        <button ion-button color="light">
+            <ion-icon name="heart" class="ico-favorite"></ion-icon> Favorite
+        </button>
+        <button ion-button color="light" (click)="presentToast($event)">
+            <ion-icon name="musical-note"></ion-icon> Sing
+        </button>
+        <button ion-button color="light">
+            <ion-icon name="play"></ion-icon> Review
+        </button>
+    </div>
+
+    <div class="lyrics">
+        <p>
+            Khóc cho tình thương đau<br>
+            Khóc trong niềm u sầu<br>
+            Em ra đi, không lời trăn trối lúc sau cuối<br><br>
+            Khóc cho người yêu xưa<br>
+            Khóc cho bờ môi mềm<br>
+            Em nay ra đi cho anh thêm niềm chua xót, thêm đắng cay<br><br>
+            Em đang nằm lắng nghiêng trong chiếc quan tài buồn như còn ngủ mê,<br>
+            Và em ơi trong tim anh đang còn xót xa<br>
+            Lần sau cuối anh mong em hãy về đây<br><br>
+            Giờ đây em biết anh còn yêu, anh còn thương, anh còn đang vẫn yêu em hoài (vẫn yêu em hoài)<br>
+            Tìm trong đêm bóng anh ngồi đây mong chờ em cho dù em đã đi xa rồi<br>
+            Ái ân còn trên môi, sao ấm nồng.<br>
+            Bóng em giờ nới đâu, xa mãi xa.<br><br>
+            Giờ đây em biết anh còn yêu, anh còn thương, anh còn đang vẫn yêu em hoài (mãi yêu muôn đời)<br>
+            Tìm trong đêm bóng anh ngồi đây mong chờ em cho dù em đã đi xa rồi<br>
+            Trách sao ngày xa xưa, hay dỗi hờn.<br>
+            Trách sao tình đã lỡ, giờ đây tình đã như tàn vỡ...<br>
+            Mãi không trở về.
+        </p>
+    </div>
+
 </ion-content>

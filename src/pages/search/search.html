@@ -19,16 +19,14 @@
                     item-right class="more"
                     (click)="more(group.name)">More</div>
             </ion-list-header>
-            <ion-item *ngFor="let song of group.songs">
+            <ion-item *ngFor="let song of group.songs" (click)="presentToast($event)">
                 <ion-thumbnail item-left>
                     <ion-img [src]="song.image"></ion-img>
                 </ion-thumbnail>
                 <h2>{{ song.name }}</h2>
                 <p>{{ song.artist }}</p>
-                <button ion-button icon-only item-right (click)="presentToast()">
-                    <ion-icon name="song-play"></ion-icon>
-                </button>
-                <button ion-button icon-only item-right>
+                <p class="lyrics">{{ song.lyrics }}</p>
+                <button ion-button icon-only item-right (click)="showDetail()">
                     <ion-icon name="song-info"></ion-icon>
                 </button>
             </ion-item>

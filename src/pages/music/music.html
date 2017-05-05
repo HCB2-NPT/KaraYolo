@@ -30,7 +30,7 @@
                 </ion-thumbnail>
                 <h2>{{ song.name }}</h2>
                 <p>{{ song.artist }}</p>
-                <button ion-button icon-only item-right (click)="showDetail(song.id)">
+                <button ion-button icon-only item-right (click)="showDetail()">
                     <ion-icon name="song-info"></ion-icon>
                 </button>
             </ion-item>
@@ -42,10 +42,7 @@
                 </ion-thumbnail>
                 <h2>{{ song.name }}</h2>
                 <p>{{ song.artist }}</p>
-                <button ion-button icon-only item-right (click)="presentToast()">
-                    <ion-icon name="song-play"></ion-icon>
-                </button>
-                <button ion-button icon-only item-right (click)="showDetail(song.id)">
+                <button ion-button icon-only item-right (click)="showDetail()">
                     <ion-icon name="song-info"></ion-icon>
                 </button>
             </ion-item>
