@@ -15,7 +15,7 @@ export class DetailPage {
     }
 
     constructor(public navCtrl: NavController) {
-        console.log(this.song);
+        // TODO
     }
 
 }

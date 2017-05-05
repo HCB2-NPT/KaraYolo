@@ -118,16 +118,23 @@ export class MusicPage {
         this.navController.push(GenresPage);
     }
 
-    showDetail(song_id) {
+    showDetail() {
         this.navController.push(DetailPage);
     }
 
-    presentToast() {
-        let toast = this.toastController.create({
-            message: 'Song was added successfully',
-            duration: 3000,
-            position: 'bottom'
-        });
-        toast.present();
+    presentToast(e) {
+        e.preventDefault();
+
+        let target = e.target;
+        if (target.tagName === 'BUTTON') {
+            this.showDetail();
+        } else {
+            let toast = this.toastController.create({
+                message: 'Song was added successfully',
+                duration: 3000,
+                position: 'bottom'
+            });
+            toast.present();
+        }
     }
 }
