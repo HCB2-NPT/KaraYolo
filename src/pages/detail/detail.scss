@@ -1,0 +1,23 @@
+page-detail {
+    .song {
+        padding: 10px;
+
+        .image {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+        }
+
+        .name {
+            margin: 5px 0 0 10px;
+            font-size: 1.8rem;
+        }
+
+        .artist {
+            margin: 10px;
+            color: #757575;
+            font-weight: 400;
+            font-size: 1.6rem;
+        }
+    }
+}
