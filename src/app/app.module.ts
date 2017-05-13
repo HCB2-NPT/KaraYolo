@@ -1,7 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
+import { KaraYolo } from './app.component';
 
 import { MusicPage } from '../pages/music/music';
 import { FavoritePage } from '../pages/favorite/favorite';
@@ -15,43 +15,45 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
 
 @NgModule({
-  declarations: [
-    MyApp,
-    MusicPage,
-    FavoritePage,
-    DashboardPage,
-    MorePage,
-    GenresPage,
-    SearchPage,
-    SearchDetailsPage,
-    DetailPage,
-    TabsPage
-  ],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp, {
-      mode: 'ios'
-    }),
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    MusicPage,
-    FavoritePage,
-    DashboardPage,
-    MorePage,
-    GenresPage,
-    SearchPage,
-    SearchDetailsPage,
-    DetailPage,
-    TabsPage,
-  ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
+    declarations: [
+        KaraYolo,
+        MusicPage,
+        FavoritePage,
+        DashboardPage,
+        MorePage,
+        GenresPage,
+        SearchPage,
+        SearchDetailsPage,
+        DetailPage,
+        TabsPage
+    ],
+    imports: [
+        BrowserModule,
+        IonicModule.forRoot(KaraYolo, {
+            mode: 'ios'
+        }),
+    ],
+    bootstrap: [IonicApp],
+    entryComponents: [
+        KaraYolo,
+        MusicPage,
+        FavoritePage,
+        DashboardPage,
+        MorePage,
+        GenresPage,
+        SearchPage,
+        SearchDetailsPage,
+        DetailPage,
+        TabsPage,
+    ],
+    providers: [
+        StatusBar,
+        SplashScreen,
+        GoogleAnalytics,
+        {provide: ErrorHandler, useClass: IonicErrorHandler}
+    ]
 })
 export class AppModule {}
