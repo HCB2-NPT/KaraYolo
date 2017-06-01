@@ -24,7 +24,7 @@
 <ion-content>
     <div [ngSwitch]="category">
         <ion-list *ngSwitchCase="'new'">
-            <ion-item *ngFor="let song of newSongs" (click)="presentToast($event)">
+            <ion-item *ngFor="let song of newSongs" (press)="presentToast($event)">
                 <ion-thumbnail item-left>
                     <img [src]="song.image">
                 </ion-thumbnail>

@@ -1,5 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { IonicStorageModule } from '@ionic/storage';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { KaraYolo } from './app.component';
 
@@ -32,6 +33,7 @@ import { GoogleAnalytics } from '@ionic-native/google-analytics';
     ],
     imports: [
         BrowserModule,
+        IonicStorageModule.forRoot(),
         IonicModule.forRoot(KaraYolo, {
             mode: 'ios'
         }),

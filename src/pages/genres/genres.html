@@ -11,7 +11,7 @@
 
 <ion-content>
     <ion-list>
-        <ion-item *ngFor="let genre of genres">
+        <ion-item *ngFor="let genre of genres" (click)="selectGenre(genre.id)">
             <ion-thumbnail item-left>
                 <img [src]="genre.image">
             </ion-thumbnail>
