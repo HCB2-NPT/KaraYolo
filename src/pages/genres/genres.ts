@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
 
 @Component({
     selector: 'page-genres',
@@ -53,9 +54,12 @@ export class GenresPage {
         }
     ]
 
-    constructor(public navController: NavController, private storage: Storage) {
+    constructor(public navController: NavController,
+            private storage: Storage,
+            private ga: GoogleAnalytics) {
         this.navController = navController;
         this.storage = storage;
+        this.ga = ga;
 
         this.init();
     }
@@ -77,10 +81,12 @@ export class GenresPage {
     }
 
     back() {
+        this.ga.trackEvent('Genres', 'back', 'Back to Music Page');
         this.navController.pop();
     }
 
     selectGenre(genreID) {
+        this.ga.trackEvent('Genres', 'selectGenre', 'Select genre');
         this.genres.map((genre) => {
             genre.selected = false;
 

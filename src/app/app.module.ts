@@ -12,6 +12,7 @@ import { GenresPage } from '../pages/genres/genres';
 import { SearchPage } from '../pages/search/search';
 import { DetailPage } from '../pages/detail/detail';
 import { SearchDetailsPage } from '../pages/search-details/search-details';
+import { CheckoutPage } from '../pages/checkout/checkout';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -29,6 +30,7 @@ import { GoogleAnalytics } from '@ionic-native/google-analytics';
         SearchPage,
         SearchDetailsPage,
         DetailPage,
+        CheckoutPage,
         TabsPage
     ],
     imports: [
@@ -49,6 +51,7 @@ import { GoogleAnalytics } from '@ionic-native/google-analytics';
         SearchPage,
         SearchDetailsPage,
         DetailPage,
+        CheckoutPage,
         TabsPage,
     ],
     providers: [
@@ -58,4 +61,5 @@ import { GoogleAnalytics } from '@ionic-native/google-analytics';
         {provide: ErrorHandler, useClass: IonicErrorHandler}
     ]
 })
+
 export class AppModule {}

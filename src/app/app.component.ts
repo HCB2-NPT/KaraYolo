@@ -27,6 +27,7 @@ export class KaraYolo {
                 ga.trackView('music');
                 ga.trackView('search');
                 ga.trackView('search-details');
+                ga.trackView('checkout');
             }).catch((e) => {
                 console.error('Error starting GoogleAnalytics', e)
             });

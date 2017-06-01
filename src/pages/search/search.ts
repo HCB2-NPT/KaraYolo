@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
 import { SearchDetailsPage } from '../search-details/search-details';
 import { DetailPage } from '../detail/detail';
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
 
 @Component({
     selector: 'page-search',
@@ -40,9 +41,12 @@ export class SearchPage {
         }
     ];
 
-    constructor(public navController: NavController, public toastController: ToastController) {
+    constructor(public navController: NavController,
+            public toastController: ToastController,
+            private ga: GoogleAnalytics) {
         this.navController = navController;
         this.toastController = toastController;
+        this.ga = ga;
     }
 
     getItems(ev: any) {
@@ -60,14 +64,17 @@ export class SearchPage {
     }
 
     back() {
+        this.ga.trackEvent('Search', 'back', 'Back to Music Page');
         this.navController.pop();
     }
 
     more(category) {
+        this.ga.trackEvent('Search', 'more', 'See more');
         this.navController.push(SearchDetailsPage);
     }
 
     showDetail() {
+        this.ga.trackEvent('Search', 'back', 'Show detail');
         this.navController.push(DetailPage);
     }
 
@@ -78,6 +85,8 @@ export class SearchPage {
         if (target.tagName === 'BUTTON') {
             this.showDetail();
         } else {
+            this.ga.trackEvent('Search', 'presentToast', 'Add song into playlist');
+
             let toast = this.toastController.create({
                 message: 'Song was added successfully',
                 duration: 3000,

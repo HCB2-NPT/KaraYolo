@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
 
 import { Songs } from '../../assets/Songs';
 
@@ -20,10 +21,12 @@ export class MusicPage {
 
     constructor(public navController: NavController,
             public toastController: ToastController,
-            private storage: Storage) {
+            private storage: Storage,
+            private ga: GoogleAnalytics) {
         this.navController = navController;
         this.toastController = toastController;
         this.storage = storage;
+        this.ga = ga;
 
         let songs = new Songs();
         this.newSongs = songs.getSongs().slice(0, 10);
@@ -31,14 +34,17 @@ export class MusicPage {
     }
 
     searchSongs(e) {
+        this.ga.trackEvent('Music', 'searchSongs', 'Go to Search Page');
         this.navController.push(SearchPage);
     }
 
     findByGenres(e) {
+        this.ga.trackEvent('Music', 'findByGenres', 'Go to Genres Page');
         this.navController.push(GenresPage);
     }
 
     showDetail(songID) {
+        this.ga.trackEvent('Music', 'presentToast', 'Show details');
         this.navController.push(DetailPage, {
             songID: songID
         });
@@ -51,6 +57,8 @@ export class MusicPage {
         if (target.tagName === 'BUTTON') {
             this.showDetail(songID);
         } else {
+            this.ga.trackEvent('Music', 'presentToast', 'Add song into playlist');
+
             let toast = this.toastController.create({
                 message: 'Song was added successfully',
                 duration: 3000,
@@ -59,7 +67,12 @@ export class MusicPage {
             toast.present();
 
             this.storage.get('playlist').then((playlist) => {
-                playlist.push(songID);
+                if (playlist) {
+                    playlist.push(songID);
+                } else {
+                    playlist = [ songID ];
+                }
+
                 this.storage.set('playlist', playlist);
             });
         }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
 import { DetailPage } from '../detail/detail';
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
 
 @Component({
     selector: 'page-search-details',
@@ -51,12 +52,16 @@ export class SearchDetailsPage {
         }
     ]
 
-    constructor(public navController: NavController, public toastController: ToastController) {
+    constructor(public navController: NavController,
+            public toastController: ToastController,
+            private ga: GoogleAnalytics) {
         this.navController = navController;
         this.toastController = toastController;
+        this.ga = ga;
     }
 
     showDetail() {
+        this.ga.trackEvent('SearchDetail', 'showDetail', 'Show detail');
         this.navController.push(DetailPage);
     }
 
@@ -67,6 +72,8 @@ export class SearchDetailsPage {
         if (target.tagName === 'BUTTON') {
             this.showDetail();
         } else {
+            this.ga.trackEvent('Search', 'back', 'Add song into playlist');
+
             let toast = this.toastController.create({
                 message: 'Song was added successfully',
                 duration: 3000,
