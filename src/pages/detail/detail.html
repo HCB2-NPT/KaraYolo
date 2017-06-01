@@ -7,18 +7,18 @@
 </ion-header>
 
 <ion-content>
-    <div class="row song">
-        <div class="col-xs-4">
-            <img [src]="song.image" class="image">
-        </div>
-        <div class="col-xs-8">
-            <h2 class="name">{{ song.name }}</h2>
-            <p class="artist">{{ song.artist }}</p>
-            <div class="genre">
-                Pop &amp; Ballads
-            </div>
-        </div>
-    </div>
+    <ion-grid>
+        <ion-row class="song">
+            <ion-col col-4>
+                <img [src]="song.image" class="image">
+            </ion-col>
+            <ion-col col-8>
+                <h2 class="name">{{ song.name }}</h2>
+                <p class="artist">{{ song.artist }}</p>
+                <div class="genre">{{ song.genre }}</div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 
     <div class="navigator">
         <button ion-button color="light">

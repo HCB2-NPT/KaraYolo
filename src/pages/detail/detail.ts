@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, ToastController } from 'ionic-angular';
+import { NavController, ToastController, NavParams } from 'ionic-angular';
+
+import { Genres } from '../../assets/Genres';
+import { Songs } from '../../assets/Songs';
 
 @Component({
     selector: 'page-detail',
@@ -7,16 +10,16 @@ import { NavController, ToastController } from 'ionic-angular';
 })
 
 export class DetailPage {
-    song: object = {
-        id: 6,
-        name: "Mãi Không Trở Về",
-        artist: "Nguyễn Thắng",
-        image: "https://a1-images.myspacecdn.com/images03/29/225cb08d20c5488dae981b020b95dbd8/300x300.jpg",
-    }
+    song: object
 
-    constructor(public navController: NavController, public toastController: ToastController) {
+    constructor(public navController: NavController,
+            public toastController: ToastController,
+            private navParams: NavParams) {
         this.navController = navController;
         this.toastController = toastController;
+        this.navParams = navParams;
+
+        this.init();
     }
 
     presentToast(e) {
@@ -26,5 +29,14 @@ export class DetailPage {
             position: 'bottom'
         });
         toast.present();
+    }
+
+    init() {
+        let songs = new Songs();
+        this.song = songs.getSongs().find(this.findSong.bind(this));
+    }
+
+    findSong(song) {
+        return (this.navParams.get('songID') === song.id);
     }
 }

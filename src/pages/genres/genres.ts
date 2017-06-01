@@ -35,7 +35,7 @@ export class GenresPage {
         },
         {
             id: 5,
-            name: 'Rap',
+            name: 'Rap - R&B',
             image: 'assets/img/rap.jpg',
             selected: false
         },
@@ -51,7 +51,7 @@ export class GenresPage {
             image: 'assets/img/us-uk.jpg',
             selected: false
         }
-    ];
+    ]
 
     constructor(public navController: NavController, private storage: Storage) {
         this.navController = navController;
